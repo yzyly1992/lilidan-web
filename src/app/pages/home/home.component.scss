@@ -1,0 +1,13 @@
+.cover-container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: black url(https://i.ibb.co/M9m3SKQ/bg.webp) center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
