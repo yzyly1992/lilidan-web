@@ -1,10 +1,17 @@
-<div class="navbar">
-    <a href="/" class="logo">
-        <img src="assets/images/logo.png" alt="logo">
+<div class="parent">
+<div class="navbar-container">
+    <a class="logo-container" href="/">
+        <img class="logo" src="https://i.ibb.co/ngLRDZb/logo.webp" alt="logo">
     </a>
-    <div class="menu">
-        <a href="/home" class="menu-item">Home</a>
-        <a href="/product" class="menu-item">Product</a>
-        <a href="/about" class="menu-item">About</a>
+    <div class="menu" [class.toggle-menu]="toggleValue">
+        <a href="/" class="menu-item">Home</a>
+        <a href="/" class="menu-item">Product</a>
+        <a href="/" class="menu-item">About</a>
     </div>
+    <div class="menu-button">
+        <button class="menu-button-item" (click)="toggleMenu()">
+            {{toggleValue ? 'X' : 'M'}}
+        </button>
+    </div>
+</div>
 </div>
