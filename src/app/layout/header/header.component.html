@@ -4,9 +4,9 @@
         <img class="logo" src="https://i.ibb.co/ngLRDZb/logo.webp" alt="logo">
     </a>
     <div class="menu" [class.toggle-menu]="toggleValue">
-        <a href="#home" class="menu-item">Home</a>
-        <a href="#product" class="menu-item">Product</a>
-        <a href="#about" class="menu-item">About</a>
+        <a routerLink="/" (click)="scrollToElement('cover')" class="menu-item">Home</a>
+        <a routerLink="/" (click)="scrollToElement('product')" class="menu-item">Product</a>
+        <a routerLink="/" (click)="scrollToElement('about')" class="menu-item">About</a>
     </div>
     <div class="menu-button">
         <button class="menu-button-item" (click)="toggleMenu()">
