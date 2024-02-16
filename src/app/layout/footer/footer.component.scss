@@ -1,8 +1,36 @@
-.copyright {
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 40px 0;
-    margin-top: 20px;
-    font-size: 1rem;
     font-family: 'Courier New', Courier, monospace;
-    color: #464646;
+    font-size: 1rem;
+    .divider {
+        width: 4rem;
+        height: 1px;
+        background-color: #464646;
+        margin: 2rem 0 2.5rem 2rem;
+    }
+    .link-container {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
+        .link-item {
+            list-style: none;
+            .link {
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    font-weight: 600;
+                }
+            }
+            margin: 0.5rem;
+        }
+    }
+    .copyright {
+        padding: 40px 0;
+        color: #464646;
+    }
 }
