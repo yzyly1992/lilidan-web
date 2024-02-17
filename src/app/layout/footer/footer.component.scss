@@ -30,7 +30,17 @@
         }
     }
     .copyright {
-        padding: 40px 0;
+        padding: 0.5rem 0 2rem 0;
         color: #464646;
+        font-size: 0.8rem;
+    }
+    .payment-list {
+        margin-top: 2rem;
+        padding: 0;
+        .payment-icon {
+            display: inline;
+            list-style: none;
+            margin: 0 0.1rem;
+        }
     }
 }
