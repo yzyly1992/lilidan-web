@@ -9,6 +9,6 @@
             <span class="price">${{product.price==product.discount?(product.price|number:'1.2-2'):(product.discount|number:'1.2-2')}}</span>
             <span class="price discount" [class.discount-hide]="product.price == product.discount">${{product.price | number:'1.2-2'}}</span>
         </div>
-        <button class="add-cart-button">Add to Cart</button>
+        <button class="add-cart-button" (click)="addToCart()">Add to Cart</button>
     </div>
 </div>
