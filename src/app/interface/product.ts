@@ -5,4 +5,5 @@ export interface Product {
     discount: number;
     description: string;
     imageUrl: string;
+    count: number;
 }

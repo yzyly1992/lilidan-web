@@ -16,6 +16,7 @@ export class Cart implements ICart{
     amount$: Observable<number> = this._amount.asObservable();
 
     addProduct(product: Product): void {
+        product.count = 1;
         const updatedProducts = [...this._products.value, product];
         this._products.next(updatedProducts);
         this._count.next(updatedProducts.length);
@@ -23,15 +24,43 @@ export class Cart implements ICart{
     }
 
     removeProduct(product: Product): void {
-        // remove only one product from the list
-        for (let i = 0; i < this._products.value.length; i++) {
-            if (this._products.value[i].id === product.id) {
-                const updatedProducts = this._products.value.splice(i, 1);
-                this._products.next(updatedProducts);
-                this._count.next(updatedProducts.length);
-                this._amount.next(this._amount.value - product.discount);
-                return;
-            }
+        if (this._products.value.length === 0 || !this._products.value.includes(product)) {
+            return;
         }
+        const updatedProducts = this._products.value.filter(p => p.id !== product.id);
+        this._products.next(updatedProducts);
+        this._count.next(updatedProducts.length);
+        this._amount.next(this._amount.value - product.discount * product.count);
+    }
+
+    clearCart(): void {
+        this._products.next([]);
+        this._count.next(0);
+        this._amount.next(0);
+    }
+
+    increaseCount(product: Product): void {
+        const updatedProducts = this._products.value.map(p => {
+            if (p.id === product.id) {
+                p.count++;
+                this._amount.next(this._amount.value + p.discount);
+            }
+            return p;
+        });
+        this._products.next(updatedProducts);
+    }
+
+    decreaseCount(product: Product): void {
+        if (product.count === 1) {
+            return this.removeProduct(product);
+        }
+        const updatedProducts = this._products.value.map(p => {
+            if (p.id === product.id) {
+                p.count--;
+                this._amount.next(this._amount.value - p.discount);
+            }
+            return p;
+        });
+        this._products.next(updatedProducts);
     }
 }
