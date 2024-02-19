@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { Product } from '../../interface/product';
 import { ProductService } from '../../services/product.service';
@@ -11,11 +11,11 @@ import { NgFor } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   products: Product[] = [];
   productService: ProductService = inject(ProductService);
 
-  constructor() {
+  ngOnInit(): void {
     this.products = this.productService.getProducts();
   } 
 }
