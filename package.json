@@ -1,5 +1,5 @@
 {
-  "name": "lilidai-web",
+  "name": "lilidan-web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:lilidai-web": "node dist/lilidai-web/server/server.mjs"
+    "serve:ssr:lilidan-web": "node dist/lilidan-web/server/server.mjs"
   },
   "private": true,
   "dependencies": {
