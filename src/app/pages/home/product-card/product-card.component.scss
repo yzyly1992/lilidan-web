@@ -4,9 +4,19 @@
     align-items: center;
     justify-content: center;
     gap: 0.2rem;
-    .card-img {
+    .card-img-container {
         width: 400px;
         max-width: 100%;
+        overflow: hidden;
+    }
+    .card-img {
+        width: 100%;
+        display: block;
+        transition: all 0.25s ease;
+        &:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
     }
     .card-content-container {
         width: 400px;
