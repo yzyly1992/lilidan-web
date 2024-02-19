@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { Cart } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { NgIf } from '@angular/common';
 })
 export class HeaderComponent implements OnInit{
   toggleValue: boolean = false;
-  cartService: Cart = inject(Cart);
+  cartService: CartService = inject(CartService);
   itemCount: number = 0;
 
   ngOnInit(): void {

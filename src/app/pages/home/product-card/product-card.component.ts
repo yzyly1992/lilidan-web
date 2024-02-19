@@ -1,7 +1,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { Product } from '../../../interface/product';
 import { DecimalPipe } from '@angular/common';
-import { Cart } from '../../../services/cart.service';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -13,7 +13,7 @@ import { Cart } from '../../../services/cart.service';
 
 export class ProductCardComponent {
   @Input() product!: Product;
-  cart: Cart = inject(Cart);
+  cart: CartService = inject(CartService);
 
   addToCart() {
     this.cart.addProduct(this.product);

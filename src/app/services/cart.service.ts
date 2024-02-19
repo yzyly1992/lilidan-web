@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 @Injectable({
     providedIn: 'root'
   })
-export class Cart implements ICart{
+export class CartService implements ICart{
     private _products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
     private _count: BehaviorSubject<number> = new BehaviorSubject<number>(0);
     private _amount: BehaviorSubject<number> = new BehaviorSubject<number>(0);
