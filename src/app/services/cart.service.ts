@@ -16,7 +16,10 @@ export class Cart implements ICart{
     amount$: Observable<number> = this._amount.asObservable();
 
     addProduct(product: Product): void {
-        product.count = 1;
+        if (this._products.value.includes(product)) {
+            return this.increaseCount(product);
+        }
+        product.count++;
         const updatedProducts = [...this._products.value, product];
         this._products.next(updatedProducts);
         this._count.next(updatedProducts.length);
