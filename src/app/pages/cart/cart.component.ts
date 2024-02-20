@@ -1,12 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Product } from '../../interface/product';
 import { CartService } from '../../services/cart.service';
-import { NgFor, NgIf } from '@angular/common';
+import { DecimalPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, DecimalPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })
