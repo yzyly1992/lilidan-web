@@ -27,6 +27,9 @@ export class HeaderComponent implements OnInit{
 
   scrollToElement(id: string): void {
     const element = document.getElementById(id);
+    if (this.toggleValue) {
+      this.toggleMenu();
+    }
     if (element) {
       element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }
