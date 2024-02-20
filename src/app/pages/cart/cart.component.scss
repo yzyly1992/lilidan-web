@@ -125,7 +125,13 @@
         justify-content: center;
         align-items: center;
     }
-    .hide {
-        display: none;
+    .paypal-btn {
+        overflow: hidden;
+        line-height: 120px;
+        transition: all .4s ease-in-out;
+        height: 0px;
+    }
+    .show-paypal {
+        height: 120px;
     }
 }

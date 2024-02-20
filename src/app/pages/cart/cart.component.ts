@@ -11,6 +11,7 @@ import { DecimalPipe, NgFor, NgIf } from '@angular/common';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent implements OnInit{
+  inCheckout: boolean = false;
   products: Product[] = [];
   count: number = 0;
   amount: number = 0;
@@ -91,6 +92,6 @@ export class CartComponent implements OnInit{
   }
 
   checkout(): void {
-    console.log('Checkout');
+    this.inCheckout = !this.inCheckout;
   }
 }
