@@ -34,4 +34,5 @@
     <div *ngIf="count===0" class="cart-empty">
         <h3>Your cart is empty</h3>
     </div>
+    <div #paymentRef [class.hide]="count===0"></div>
 </div>
