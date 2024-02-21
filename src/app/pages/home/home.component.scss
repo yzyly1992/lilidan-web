@@ -63,7 +63,7 @@
 
 .event-container {
     text-align: center;
-    margin: 5rem 0;
+    margin: 0 0 5rem 0;
     .event-title {
         line-height: 4rem;
     }
@@ -75,4 +75,15 @@
             font-weight: 600;
         }
     }
+}
+
+.contact-container {
+    overflow: hidden;
+    line-height: 1.4rem;
+    transition: all .4s ease-in-out;
+    height: 0px;
+}
+
+.contact-show {
+    height: 3rem;
 }

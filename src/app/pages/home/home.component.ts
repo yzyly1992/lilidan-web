@@ -13,9 +13,14 @@ import { NgFor } from '@angular/common';
 })
 export class HomeComponent implements OnInit{
   products: Product[] = [];
+  contactShow: boolean = false;
   productService: ProductService = inject(ProductService);
 
   ngOnInit(): void {
     this.products = this.productService.getProducts();
   } 
+
+  toggleContact(): void {
+    this.contactShow = !this.contactShow;
+  }
 }
