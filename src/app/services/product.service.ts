@@ -47,7 +47,7 @@ export class ProductService {
           discount: Number(item[3]),
           imageUrl: item[4],
           description: item[5],
-          gallery: item.slice(6),
+          gallery: [item[4], ...item.slice(6)],
         };
       });
   }
