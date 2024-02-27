@@ -14,7 +14,7 @@ export class CartComponent implements OnInit{
   inCheckout: boolean = false;
   products: Set<Product> = new Set<Product>();
   amount: number = 0;
-  countList: Map<Product, number> = new Map<Product, number>();
+  countList: Map<number, number> = new Map<number, number>();
   cartService: CartService = inject(CartService);
   @ViewChild('paymentRef', { static: true }) paymentRef!: ElementRef;
 
@@ -25,7 +25,7 @@ export class CartComponent implements OnInit{
     this.cartService.amount$.subscribe((amount: number) => {
       this.amount = amount;
     });
-    this.cartService.count_list$.subscribe((countList: Map<Product, number>) => {
+    this.cartService.count_list$.subscribe((countList: Map<number, number>) => {
       this.countList = countList;
     });
     window.paypal.Buttons({
@@ -46,7 +46,7 @@ export class CartComponent implements OnInit{
               items: Array.from(this.products).map((product: Product) => {
                 return {
                   name: product.name,
-                  quantity: this.countList.get(product),
+                  quantity: this.countList.get(product.id),
                   unit_amount: {
                     currency_code: 'USD',
                     value: product.discount,

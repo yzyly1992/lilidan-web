@@ -4,11 +4,12 @@ import { ProductDetail } from '../../interface/product-detail';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../interface/product';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [],
+  imports: [NgFor],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })

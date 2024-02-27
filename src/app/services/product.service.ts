@@ -24,7 +24,6 @@ export class ProductService {
           price: Number(item[2]),
           discount: Number(item[3]),
           imageUrl: item[4],
-          count: 0,
         }));
       });
   };
@@ -47,12 +46,8 @@ export class ProductService {
           price: Number(item[2]),
           discount: Number(item[3]),
           imageUrl: item[4],
-          count: 0,
           description: item[5],
-          gallery_1: item[6],
-          gallery_2: item[7],
-          gallery_3: item[8],
-          gallery_4: item[9],
+          gallery: item.slice(6),
         };
       });
   }

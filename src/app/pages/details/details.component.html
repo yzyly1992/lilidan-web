@@ -1,31 +1,13 @@
 <div class="detail-container">
     <div class="gallery-container">
         <div class="gallery">
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_1" alt="gallery image 1 of {{ productDetail.name }}">
-            </div>
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_2" alt="gallery image 2 of {{ productDetail.name }}">
-            </div>
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_3" alt="gallery image 3 of {{ productDetail.name }}">
-            </div>
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_4" alt="gallery image 4 of {{ productDetail.name }}">
+            <div *ngFor="let img of productDetail.gallery; index as i" class="gallery-item">
+                <img [src]="img" alt="gallery image {{ i+1 }} of {{ productDetail.name }}">
             </div>
         </div>
         <div class="gallery-nav">
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_1" alt="gallery image 1 of {{ productDetail.name }}">
-            </div>
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_2" alt="gallery image 2 of {{ productDetail.name }}">
-            </div>
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_3" alt="gallery image 3 of {{ productDetail.name }}">
-            </div>
-            <div class="gallery-item">
-                <img [src]="productDetail.gallery_4" alt="gallery image 4 of {{ productDetail.name }}">
+            <div *ngFor="let img of productDetail.gallery; index as i" class="gallery-thumbnail">
+                <img [src]="img" alt="thumbnail image {{ i+1 }} of {{ productDetail.name }}">
             </div>
         </div>
     </div>
