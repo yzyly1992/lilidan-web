@@ -1,7 +1,7 @@
 <div class="product-card">
-    <div class="card-img-container">
+    <a [routerLink]="['/details', product.id]" class="card-img-container">
         <img class="card-img" [src]="product.imageUrl" alt="product image of {{product.name}}">
-    </div>
+    </a>
     <div class="card-content-container">
         <h2 class="content-title">{{product.name}}</h2>
         <!-- <p class="content-description">{{product.description}}</p> -->

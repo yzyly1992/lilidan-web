@@ -17,7 +17,9 @@ export class HomeComponent implements OnInit{
   productService: ProductService = inject(ProductService);
 
   ngOnInit(): void {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().then((products) => {
+      this.products = products;
+    });
   } 
 
   toggleContact(): void {
