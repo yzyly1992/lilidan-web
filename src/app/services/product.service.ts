@@ -19,10 +19,10 @@ export class ProductService {
       .then(async response => {
         const data = await response.json();
         return data.values.map((item: any) => ({
-          id: item[0],
+          id: Number(item[0]),
           name: item[1],
-          price: item[2],
-          discount: item[3],
+          price: Number(item[2]),
+          discount: Number(item[3]),
           imageUrl: item[4],
           count: 0,
         }));
@@ -42,10 +42,10 @@ export class ProductService {
         const data = await response.json();
         const item = data.values[0];
         return {
-          id: item[0],
+          id: Number(item[0]),
           name: item[1],
-          price: item[2],
-          discount: item[3],
+          price: Number(item[2]),
+          discount: Number(item[3]),
           imageUrl: item[4],
           count: 0,
           description: item[5],

@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit{
   itemCount: number = 0;
 
   ngOnInit(): void {
-    this.cartService.count$.subscribe((count: number) => {
-      this.itemCount = count;
+    this.cartService.products$.subscribe((products) => {
+      this.itemCount = products.size;
     });
   }
 

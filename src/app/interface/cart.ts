@@ -1,10 +1,10 @@
-import { BehaviorSubject, Observable } from "rxjs";
+import { Observable } from "rxjs";
 import { Product } from "./product";
 
 export interface ICart {
-    products$: Observable<Product[]>;
-    count$: Observable<number>;
+    products$: Observable<Set<Product>>;
     amount$: Observable<number>;
+    count_list$: Observable<Map<Product, number>>;
     addProduct(product: Product): void;
     removeProduct(product: Product): void;
 }

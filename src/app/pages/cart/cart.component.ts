@@ -12,21 +12,21 @@ import { DecimalPipe, NgFor, NgIf } from '@angular/common';
 })
 export class CartComponent implements OnInit{
   inCheckout: boolean = false;
-  products: Product[] = [];
-  count: number = 0;
+  products: Set<Product> = new Set<Product>();
   amount: number = 0;
+  countList: Map<Product, number> = new Map<Product, number>();
   cartService: CartService = inject(CartService);
   @ViewChild('paymentRef', { static: true }) paymentRef!: ElementRef;
 
   ngOnInit(): void {
-    this.cartService.products$.subscribe((products: Product[]) => {
+    this.cartService.products$.subscribe((products: Set<Product>) => {
       this.products = products;
-    });
-    this.cartService.count$.subscribe((count: number) => {
-      this.count = count;
     });
     this.cartService.amount$.subscribe((amount: number) => {
       this.amount = amount;
+    });
+    this.cartService.count_list$.subscribe((countList: Map<Product, number>) => {
+      this.countList = countList;
     });
     window.paypal.Buttons({
       createOrder: (data: any, actions: any) => {
@@ -43,10 +43,10 @@ export class CartComponent implements OnInit{
                   }
                 }
               },
-              items: this.products.map((product: Product) => {
+              items: Array.from(this.products).map((product: Product) => {
                 return {
                   name: product.name,
-                  quantity: product.count,
+                  quantity: this.countList.get(product),
                   unit_amount: {
                     currency_code: 'USD',
                     value: product.discount,

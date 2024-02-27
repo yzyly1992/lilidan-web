@@ -4,5 +4,4 @@ export interface Product {
     price: number;
     discount: number;
     imageUrl: string;
-    count: number;
 }

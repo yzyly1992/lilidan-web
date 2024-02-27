@@ -1,1 +1,40 @@
-<p>details works!</p>
+<div class="detail-container">
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_1" alt="gallery image 1 of {{ productDetail.name }}">
+            </div>
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_2" alt="gallery image 2 of {{ productDetail.name }}">
+            </div>
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_3" alt="gallery image 3 of {{ productDetail.name }}">
+            </div>
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_4" alt="gallery image 4 of {{ productDetail.name }}">
+            </div>
+        </div>
+        <div class="gallery-nav">
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_1" alt="gallery image 1 of {{ productDetail.name }}">
+            </div>
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_2" alt="gallery image 2 of {{ productDetail.name }}">
+            </div>
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_3" alt="gallery image 3 of {{ productDetail.name }}">
+            </div>
+            <div class="gallery-item">
+                <img [src]="productDetail.gallery_4" alt="gallery image 4 of {{ productDetail.name }}">
+            </div>
+        </div>
+    </div>
+    <div class="detail-info-container">
+        <h2 class="detail-title">{{ productDetail.name }}</h2>
+        <p class="detail-price">{{ productDetail.id }}</p>
+        <p class="detail-price">{{ productDetail.price }}</p>
+        <p class="detail-price">{{ productDetail.discount }}</p>
+        <p class="detail-description">{{ productDetail.description }}</p>
+        <button class="detail-button" (click)="addToCart()">Add to Cart</button>
+    </div>
+</div>
