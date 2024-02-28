@@ -4,17 +4,18 @@ import { ProductDetail } from '../../interface/product-detail';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../interface/product';
-import { NgFor } from '@angular/common';
+import { DecimalPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, NgIf, DecimalPipe],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })
 export class DetailsComponent {
   id: number = 0;
+  selectedIndex: number = 0;
   private sub: any;
   productDetail: Partial<ProductDetail> = {};
   productService: ProductService = inject(ProductService);
@@ -35,5 +36,9 @@ export class DetailsComponent {
     if (this.productDetail.id !== undefined) {
       this.cartService.addProduct(this.productDetail as Product);
     }
+  }
+
+  selectImage(index: number) {
+    this.selectedIndex = index;
   }
 }

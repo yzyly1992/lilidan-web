@@ -52,10 +52,10 @@
             background: #000000;
             color: #FFFFFF;
             border-radius: 25px;
-            padding: 14px 24px 16px;
+            padding: 15px 24px;
             font-size: 1rem;
-            font-weight: 700;
-            line-height: 1;
+            font-weight: 800;
+            font-family: inherit;
             transition: transform 200ms,background 200ms;
             &:hover{
                 transform: translateY(-2px);
