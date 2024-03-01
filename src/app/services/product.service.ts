@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interface/product';
 import { ProductDetail } from '../interface/product-detail';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  spreadsheet_id: string = '13vjB5V7DcCtb9Jfr2AzyJwyv1D_MsDQRYUe7GUcatxY';
-  api_key: string = 'AIzaSyALBEekEDlZgipzgnneJfwb-5c44Oe2RxI';
 
   async getProducts(): Promise<Product[]> {
     const range = 'soap!A2:E';
     const uri = 'https://sheets.googleapis.com/v4/spreadsheets/' +
-    this.spreadsheet_id + '/values/' + range +
-    '?alt=json&key=' + this.api_key
+    environment.spreadsheet_id + '/values/' + range +
+    '?alt=json&key=' + environment.api_key
 
     return await fetch(uri)
       .then(async response => {
@@ -33,8 +32,8 @@ export class ProductService {
     const index = (id + 2).toString();
     const range: string = 'soap!A' + index + ':J' + index;
     const uri = 'https://sheets.googleapis.com/v4/spreadsheets/' +
-    this.spreadsheet_id + '/values/' + range +
-    '?alt=json&key=' + this.api_key
+    environment.spreadsheet_id + '/values/' + range +
+    '?alt=json&key=' + environment.api_key
 
     return await fetch(uri)
       .then(async response => {
