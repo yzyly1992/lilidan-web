@@ -10,7 +10,7 @@
                 </div>
                 <div class="cart-item-details">
                     <h3>{{ product.name }}</h3>
-                    <p>Price: ${{ product.discount | number:'1.2-2' }}</p>
+                    <p>Price: ${{ product.discount | number:'1.2-2' }} CAD</p>
                     <a class="remove-btn" (click)="removeProduct(product)">Remove</a>
                 </div>
                 <div class="count-container">
@@ -24,8 +24,8 @@
         <div class="cart-summary">
             <h2>Cart Summary</h2>
             <p>Total Items: {{ products.size }}</p>
-            <p>Total Cost: ${{ amount | number:'1.2-2' }}</p>
-            <p>Estimated Taxes: ${{ amount * 0.12 | number:'1.2-2'}}</p>
+            <p>Total Cost: ${{ amount | number:'1.2-2' }} CAD</p>
+            <p>Estimated Taxes: ${{ amount * 0.12 | number:'1.2-2'}} CAD</p>
         </div>
         <div class="cart-checkout">
             <button class="checkout-btn" (click)="checkout()">Checkout</button>

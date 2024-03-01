@@ -38,10 +38,10 @@ export class DetailsComponent {
             {
               amount: {
                 value: this.productDetail.discount,
-                currency_code: 'USD',
+                currency_code: 'CAD',
                 breakdown:{
                   item_total:{
-                      currency_code: 'USD',
+                      currency_code: 'CAD',
                       value: this.productDetail.discount,
                   }
                 }
@@ -50,7 +50,7 @@ export class DetailsComponent {
                   name: this.productDetail.name,
                   quantity: 1,
                   unit_amount: {
-                    currency_code: 'USD',
+                    currency_code: 'CAD',
                     value: this.productDetail.discount,
                   }
               }]

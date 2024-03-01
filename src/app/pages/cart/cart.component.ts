@@ -35,10 +35,10 @@ export class CartComponent implements OnInit{
             {
               amount: {
                 value: this.amount,
-                currency_code: 'USD',
+                currency_code: 'CAD',
                 breakdown:{
                   item_total:{
-                      currency_code: 'USD',
+                      currency_code: 'CAD',
                       value: this.amount,
                   }
                 }
@@ -48,7 +48,7 @@ export class CartComponent implements OnInit{
                   name: product.name,
                   quantity: this.countList.get(product.id),
                   unit_amount: {
-                    currency_code: 'USD',
+                    currency_code: 'CAD',
                     value: product.discount,
                   },
                 };
