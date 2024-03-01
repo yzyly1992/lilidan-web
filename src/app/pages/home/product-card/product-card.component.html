@@ -6,8 +6,9 @@
         <h2 class="content-title">{{product.name}}</h2>
         <!-- <p class="content-description">{{product.description}}</p> -->
         <div class="content-price-container">
-            <span class="price">${{product.price==product.discount?(product.price|number:'1.2-2'):(product.discount|number:'1.2-2')}}</span>
             <span class="price discount" [class.discount-hide]="product.price == product.discount">${{product.price | number:'1.2-2'}}</span>
+            <span class="price">${{product.price==product.discount?(product.price|number:'1.2-2'):(product.discount|number:'1.2-2')}}</span>
+            <span class="price"> CAD</span>
         </div>
         <button class="add-cart-button" (click)="addToCart()">Add to Cart</button>
     </div>

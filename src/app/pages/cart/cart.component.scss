@@ -96,9 +96,11 @@
             text-align: center;
             cursor: pointer;
             padding: 13px 26px;
+            width: 300px;
             border: 0;
             color: #fff;
             font-size: 17.5px;
+            font-family: inherit;
             border: 2px solid transparent;
             border-color: #000;
             color: #000;
@@ -127,11 +129,11 @@
     }
     .paypal-btn {
         overflow: hidden;
-        line-height: 120px;
+        width: 300px;
         transition: all .4s ease-in-out;
         height: 0px;
     }
     .show-paypal {
-        height: 120px;
+        height: 150px;
     }
 }

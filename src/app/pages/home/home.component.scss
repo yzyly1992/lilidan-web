@@ -51,8 +51,10 @@
 
 .card-container {
     display: grid;
+    max-width: 1000px;
+    margin: 0 auto;
     grid-template-columns: repeat(2, minmax(300px, 1fr));
-    row-gap: 6rem;
+    row-gap: 5rem;
     column-gap: 2rem;
     padding: 50px;
     @media (max-width: 768px) {

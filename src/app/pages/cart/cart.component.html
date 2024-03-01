@@ -34,5 +34,5 @@
     <div *ngIf="products.size===0" class="cart-empty">
         <h3>Your cart is empty</h3>
     </div>
-    <div #paymentRef class="paypal-btn" [class.show-paypal]="inCheckout"></div>
+    <div #paymentRef class="paypal-btn" [class.show-paypal]="inCheckout&&products.size!==0"></div>
 </div>

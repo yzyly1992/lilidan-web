@@ -16,8 +16,12 @@
         <div class="price-container">
             <p [class.discount]="productDetail.price !== productDetail.discount" class="price">${{ productDetail.price|number:'1.2-2' }}</p>
             <p *ngIf="productDetail.price !== productDetail.discount" class="price">${{ productDetail.discount|number:'1.2-2' }}</p>
+            <p class="price">CAD</p>
         </div>
         <p class="detail-description">{{ productDetail.description }}</p>
-        <button class="add-cart-button" (click)="addToCart()">Add to Cart</button>
+        <div class="btn-container">
+            <button class="add-cart-button" (click)="addToCart()">Add to Cart</button>
+            <div #paymentRef class="paypal-btn"></div>
+        </div>
     </div>
 </div>

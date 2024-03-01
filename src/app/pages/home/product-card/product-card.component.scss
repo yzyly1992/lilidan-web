@@ -28,8 +28,7 @@
         }
         .content-price-container {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            gap:0.5rem;
             .price {
                 font-weight: 600;
                 font-size: 1.1rem;
@@ -39,7 +38,7 @@
             }
             .discount {
                 text-decoration: line-through;
-                color: rgb(224, 72, 8);
+                color: rgb(255, 98, 31);
                 margin-left: 0.5rem;
             }
         }
