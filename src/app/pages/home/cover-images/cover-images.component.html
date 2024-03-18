@@ -1,0 +1,5 @@
+<div class="cover-images">
+    <ng-container *ngFor="let url of coverImageUrls; index as i">
+        <img [class.cover-show]="i==currentIndex" [src]="url" alt="cover image {{i}}" class="cover-image">
+    </ng-container>
+</div>
