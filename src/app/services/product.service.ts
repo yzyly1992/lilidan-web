@@ -11,7 +11,7 @@ export class ProductService {
   async getProducts(): Promise<Product[]> {
     const range = 'soap!A2:E';
     const uri = 'https://sheets.googleapis.com/v4/spreadsheets/' +
-    environment.spreadsheet_id + '/values/' + range +
+    environment.product_spreadsheet_id + '/values/' + range +
     '?alt=json&key=' + environment.api_key
 
     return await fetch(uri)
@@ -32,7 +32,7 @@ export class ProductService {
     const index = (id + 2).toString();
     const range: string = 'soap!A' + index + ':J' + index;
     const uri = 'https://sheets.googleapis.com/v4/spreadsheets/' +
-    environment.spreadsheet_id + '/values/' + range +
+    environment.product_spreadsheet_id + '/values/' + range +
     '?alt=json&key=' + environment.api_key
 
     return await fetch(uri)

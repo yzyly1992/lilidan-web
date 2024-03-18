@@ -1,5 +1,5 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cover-images',
@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './cover-images.component.scss'
 })
 export class CoverImagesComponent implements OnInit {
-  coverImageUrls: string[] = ['https://i.ibb.co/M9m3SKQ/bg.webp', 'https://lillianelsiehome.com/cdn/shop/files/777e35ac-1e37-4a1f-bdec-5682f6699b7a_1380x.jpg'];
+  @Input() coverImageUrls!: string[];
   currentIndex: number = 0;
   timer: any;
 

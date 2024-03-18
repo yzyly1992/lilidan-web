@@ -4,6 +4,8 @@ import { Product } from '../../interface/product';
 import { ProductService } from '../../services/product.service';
 import { NgFor } from '@angular/common';
 import { CoverImagesComponent } from './cover-images/cover-images.component';
+import { HomeService } from '../../services/home.service';
+import { Home } from '../../interface/home';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +16,25 @@ import { CoverImagesComponent } from './cover-images/cover-images.component';
 })
 export class HomeComponent implements OnInit{
   products: Product[] = [];
+  homeData: Home = {
+    sloganTitle: '',
+    sloganDescription: '',
+    aboutTitle: '',
+    aboutDescription: '',
+    eventTitle: '',
+    eventDescription: '',
+    coverImages: []
+  };
   contactShow: boolean = false;
   productService: ProductService = inject(ProductService);
+  homeService: HomeService = inject(HomeService);
 
   ngOnInit(): void {
     this.productService.getProducts().then((products) => {
       this.products = products;
+    });
+    this.homeService.getHome().then((homeData) => {
+      this.homeData = homeData;
     });
   } 
 
