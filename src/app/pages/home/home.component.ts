@@ -6,6 +6,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { CoverImagesComponent } from './cover-images/cover-images.component';
 import { HomeService } from '../../services/home.service';
 import { Router } from '@angular/router';
+import { Home } from '../../interface/home';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,15 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
   products: Product[] = [];
-  homeData: any;
+  homeData: Home = {
+    sloganTitle: '',
+    sloganDescription: '',
+    aboutTitle: '',
+    aboutDescription: '',
+    eventTitle: '',
+    eventDescription: '',
+    coverImages: []
+  };
   contactShow: boolean = false;
   productService: ProductService = inject(ProductService);
   homeService: HomeService = inject(HomeService);
