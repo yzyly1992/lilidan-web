@@ -4,7 +4,7 @@ import { InMemoryScrollingFeature, InMemoryScrollingOptions, provideRouter, with
 import { routes } from './app.routes';
 
 const scrollConfig: InMemoryScrollingOptions = {
-  scrollPositionRestoration: 'top',
+  scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
 };
 
