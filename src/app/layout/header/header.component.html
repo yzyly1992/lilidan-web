@@ -5,8 +5,8 @@
     </a>
     <div class="menu" [class.toggle-menu]="toggleValue">
         <a routerLink="/" class="menu-item" (click)="closeMenu()">Home</a>
-        <a routerLink="/product" class="menu-item" (click)="closeMenu()">Product</a>
         <a routerLink="/" fragment="about" class="menu-item" (click)="closeMenu()">About</a>
+        <a routerLink="/product" class="menu-item" (click)="closeMenu()">Product</a>
         <a routerLink="/cart" class="menu-item" (click)="closeMenu()">Cart<span *ngIf="itemCount !== 0">({{itemCount}})</span></a>
     </div>
     <div class="menu-button">
