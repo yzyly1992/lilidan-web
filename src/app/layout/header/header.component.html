@@ -4,10 +4,10 @@
         <img class="logo" src="https://i.ibb.co/ngLRDZb/logo.webp" alt="logo">
     </a>
     <div class="menu" [class.toggle-menu]="toggleValue">
-        <a routerLink="/" (click)="scrollToElement('cover')" class="menu-item">Home</a>
-        <a routerLink="/" (click)="scrollToElement('product')" class="menu-item">Product</a>
-        <a routerLink="/" (click)="scrollToElement('about')" class="menu-item">About</a>
-        <a routerLink="/cart" (click)="toggleMenu()" class="menu-item">Cart<span *ngIf="itemCount !== 0">({{itemCount}})</span></a>
+        <a routerLink="/" class="menu-item" (click)="closeMenu()">Home</a>
+        <a routerLink="/" fragment="product" class="menu-item" (click)="closeMenu()">Product</a>
+        <a routerLink="/" fragment="about" class="menu-item" (click)="closeMenu()">About</a>
+        <a routerLink="/cart" class="menu-item" (click)="closeMenu()">Cart<span *ngIf="itemCount !== 0">({{itemCount}})</span></a>
     </div>
     <div class="menu-button">
         <button class="menu-button-item" (click)="toggleMenu()">

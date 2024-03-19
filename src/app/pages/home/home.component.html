@@ -1,22 +1,19 @@
 <!-- cover section -->
-<section>
-    <!-- <div id="cover" class="cover-container">
-        <div class="cover-image"></div>
-    </div> -->
+<section id="cover">
     <app-cover-images [coverImageUrls]="homeData.coverImages" />
 </section>
 
 <!-- slogan section -->
-<section>
-    <div id="slogan" class="intro-container">
+<section id="slogan">
+    <div class="intro-container">
         <h2 class="intro-title">{{homeData.sloganTitle}}</h2>
         <p class="intro-description">{{homeData.sloganDescription}}</p>
     </div>
 </section>
 
 <!-- products section -->
-<section>
-    <div id="product" class="card-container">
+<section id="product">
+    <div class="card-container">
         <app-product-card
         *ngFor="let product of products"
         [product]="product">
@@ -25,8 +22,8 @@
 </section>
 
 <!-- about section -->
-<section>
-    <div id="about" class="intro-container">
+<section id="about">
+    <div class="intro-container">
         <h2 class="intro-title">Sister Who Soap</h2>
         <p class="intro-description">Our business is an extension of our home and love for those around us and the planet. We've made a promise to consciously create products that make a positive impact on our health and lifestyle, best utilize natural resources and talent in our communities and make us feel awesome during the process!</p>
         <button (click)="toggleContact()" class="intro-button">Contact Us</button>
@@ -38,7 +35,7 @@
 </section>
 
 <!-- event section -->
-<section>
+<section id="event">
     <div class="event-container">
         <h2 class="event-title">{{homeData.eventTitle}}</h2>
         <ul class="event-list">

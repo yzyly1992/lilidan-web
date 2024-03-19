@@ -25,13 +25,7 @@ export class HeaderComponent implements OnInit{
     this.toggleValue = !this.toggleValue;
   }
 
-  scrollToElement(id: string): void {
-    const element = document.getElementById(id);
-    if (this.toggleValue) {
-      this.toggleMenu();
-    }
-    if (element) {
-      element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }
+  closeMenu() {
+    this.toggleValue = false;
   }
 }
