@@ -3,6 +3,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductComponent } from './pages/product/product.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 export const routes: Routes = [
     {
@@ -24,6 +26,16 @@ export const routes: Routes = [
         path: 'product',
         component: ProductComponent,
         title: 'Lili & Dan - Product'
+    },
+    {
+        path: 'privacy',
+        component: PrivacyComponent,
+        title: 'Lili & Dan - Privacy'
+    },
+    {
+        path: 'terms',
+        component: TermsComponent,
+        title: 'Lili & Dan - Terms of Service'
     }
 ];
 
