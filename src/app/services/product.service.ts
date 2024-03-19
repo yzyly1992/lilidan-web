@@ -27,6 +27,24 @@ export class ProductService {
       });
   };
 
+  async getHomeProducts(): Promise<Product[]> {
+    const range = 'soap!A2:E5';
+    const uri = 'https://sheets.googleapis.com/v4/spreadsheets/' +
+    environment.product_spreadsheet_id + '/values/' + range +
+    '?alt=json&key=' + environment.api_key
+
+    return await fetch(uri)
+      .then(async response => {
+        const data = await response.json();
+        return data.values.map((item: any) => ({
+          id: Number(item[0]),
+          name: item[1],
+          price: Number(item[2]),
+          discount: Number(item[3]),
+          imageUrl: item[4],
+        }));
+      });
+  };
 
   async getProduct(id: number): Promise<ProductDetail> {
     const index = (id + 2).toString();

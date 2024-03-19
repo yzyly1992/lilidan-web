@@ -5,8 +5,7 @@ import { ProductService } from '../../services/product.service';
 import { NgFor, NgIf } from '@angular/common';
 import { CoverImagesComponent } from './cover-images/cover-images.component';
 import { HomeService } from '../../services/home.service';
-import { Home } from '../../interface/home';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -29,14 +28,14 @@ export class HomeComponent implements OnInit{
         preserveFragment: true,     // fragment to navigate
         skipLocationChange: true  // prevent history pollution
        });
-    }, 200);
+    }, 500);
   }
 
   ngOnInit(): void {
     this.homeService.getHome().then((homeData) => {
       this.homeData = homeData;
     });
-    this.productService.getProducts().then((products) => {
+    this.productService.getHomeProducts().then((products) => {
       this.products = products;
     });
   } 
