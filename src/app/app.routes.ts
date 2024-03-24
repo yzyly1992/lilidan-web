@@ -5,6 +5,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ProductComponent } from './pages/product/product.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { TermsComponent } from './pages/terms/terms.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
+import { RefundComponent } from './pages/refund/refund.component';
 
 export const routes: Routes = [
     {
@@ -36,6 +38,16 @@ export const routes: Routes = [
         path: 'terms',
         component: TermsComponent,
         title: 'Lili & Dan - Terms of Service'
+    },
+    {
+        path: 'shipping',
+        component: ShippingComponent,
+        title: 'Lili & Dan - Shipping Policy'
+    },
+    {
+        path: 'refund',
+        component: RefundComponent,
+        title: 'Lili & Dan - Refund Policy'
     }
 ];
 
