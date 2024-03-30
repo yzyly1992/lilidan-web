@@ -24,8 +24,8 @@
 <!-- about section -->
 <section id="about">
     <div class="intro-container">
-        <h2 class="intro-title">Sister Who Soap</h2>
-        <p class="intro-description">Our business is an extension of our home and love for those around us and the planet. We've made a promise to consciously create products that make a positive impact on our health and lifestyle, best utilize natural resources and talent in our communities and make us feel awesome during the process!</p>
+        <h2 class="intro-title">{{homeData.aboutTitle}}</h2>
+        <p class="intro-description">{{homeData.aboutDescription}}</p>
         <button (click)="toggleContact()" class="intro-button">Contact Us</button>
         <div [class.contact-show]="contactShow" class="contact-container">
             <b>information&#64;lilidan.online</b>
