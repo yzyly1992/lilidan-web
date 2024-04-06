@@ -14,6 +14,8 @@ export class CartComponent implements OnInit{
   inCheckout: boolean = false;
   products: Set<Product> = new Set<Product>();
   amount: number = 0;
+  notificateType: string = 'hidden';
+  notificateMessage: string = '';
   countList: Map<number, number> = new Map<number, number>();
   cartService: CartService = inject(CartService);
   @ViewChild('paymentRef', { static: true }) paymentRef!: ElementRef;
@@ -60,13 +62,22 @@ export class CartComponent implements OnInit{
       onApprove: (data: any, actions: any) => {
         return actions.order.capture().then((details: any) => {
           if (details.status === 'COMPLETED') {
-            console.log(details.id);
+            // console.log(details.id);
             this.cartService.clearCart();
+            this.notificateMessage = 'Payment success! Thank you for your purchase! Your order number is ' + details.id;
+            this.notificateType = 'success';
           }
         });
       },
       onError: (err: any) => {
-        console.log(err);
+        // console.log(err);
+        this.notificateMessage = 'Payment failed! Please try again later!';
+        this.notificateType = 'error';
+      },
+      onCancel: (data: any) => {
+        // console.log(data);
+        this.notificateMessage = 'Payment canceled!';
+        this.notificateType = 'cancel';
       },
     }).render(this.paymentRef.nativeElement);
   }
@@ -93,5 +104,10 @@ export class CartComponent implements OnInit{
 
   checkout(): void {
     this.inCheckout = !this.inCheckout;
+  }
+
+  closeNotificate(): void {
+    this.notificateMessage = '';
+    this.notificateType = 'hidden';
   }
 }

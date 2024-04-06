@@ -31,6 +31,10 @@
             <button class="checkout-btn" (click)="checkout()">Checkout</button>
         </div>
     </div>
+    <div [class]="notificateType" class="notification">
+        <p>{{ notificateMessage }}</p>
+        <button class="close-btn" (click)="closeNotificate()">x</button>
+    </div>
     <div *ngIf="products.size===0" class="cart-empty">
         <h3>Your cart is empty</h3>
     </div>
