@@ -37,13 +37,17 @@ export class DetailsComponent {
           purchase_units: [
             {
               amount: {
-                value: this.productDetail.discount,
+                value: this.productDetail.discount! + 15,
                 currency_code: 'CAD',
                 breakdown:{
                   item_total:{
                       currency_code: 'CAD',
                       value: this.productDetail.discount,
-                  }
+                  },
+                  shipping: {
+                      currency_code: 'CAD',
+                      value: 15,
+                  },
                 }
               },
               items: [{

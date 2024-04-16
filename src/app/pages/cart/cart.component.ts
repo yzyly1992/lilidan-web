@@ -14,6 +14,7 @@ export class CartComponent implements OnInit{
   inCheckout: boolean = false;
   products: Set<Product> = new Set<Product>();
   amount: number = 0;
+  shippingFee: number = 15;
   notificateType: string = 'hidden';
   notificateMessage: string = '';
   countList: Map<number, number> = new Map<number, number>();
@@ -26,24 +27,34 @@ export class CartComponent implements OnInit{
     });
     this.cartService.amount$.subscribe((amount: number) => {
       this.amount = amount;
+      if (this.amount > 100) {
+        this.shippingFee = 25;
+      } else {
+        this.shippingFee = 15;
+      }
     });
     this.cartService.count_list$.subscribe((countList: Map<number, number>) => {
       this.countList = countList;
     });
+
     window.paypal.Buttons({
       createOrder: (data: any, actions: any) => {
         return actions.order.create({
           purchase_units: [
             {
               amount: {
-                value: this.amount,
+                value: this.amount + this.shippingFee,
                 currency_code: 'CAD',
                 breakdown:{
                   item_total:{
-                      currency_code: 'CAD',
-                      value: this.amount,
-                  }
-                }
+                    currency_code: 'CAD',
+                    value: this.amount,
+                  },
+                  shipping: {
+                    currency_code: 'CAD',
+                    value: this.shippingFee,
+                  },
+                },
               },
               items: Array.from(this.products).map((product: Product) => {
                 return {
