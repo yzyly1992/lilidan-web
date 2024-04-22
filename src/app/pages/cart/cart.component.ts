@@ -75,7 +75,7 @@ export class CartComponent implements OnInit{
           if (details.status === 'COMPLETED') {
             // console.log(details.id);
             this.cartService.clearCart();
-            this.notificateMessage = 'Payment success! Thank you for your purchase! Your order number is ' + details.id;
+            this.notificateMessage = 'Payment success! Thank you for your purchase! Your order number is ' + details.id + '. We will send you an email with the order details.';
             this.notificateType = 'success';
           }
         });
