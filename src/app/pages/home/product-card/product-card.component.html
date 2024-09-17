@@ -3,7 +3,7 @@
         <img class="card-img" [src]="product.imageUrl" alt="product image of {{product.name}}">
     </a>
     <div class="card-content-container">
-        <h2 class="content-title">{{product.name}}</h2>
+        <a [routerLink]="['/details', product.id]"><h2 class="content-title">{{product.name}}</h2></a>
         <!-- <p class="content-description">{{product.description}}</p> -->
         <div class="content-price-container">
             <span class="price discount" [class.discount-hide]="product.price == product.discount">${{product.price | number:'1.2-2'}}</span>
