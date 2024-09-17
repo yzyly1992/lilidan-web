@@ -21,7 +21,9 @@
         <pre class="detail-description">{{ productDetail.description }}</pre>
         <div class="btn-container">
             <button class="add-cart-button" (click)="addToCart()">Add to Cart</button>
-            <div #paymentRef class="paypal-btn"></div>
+            <button class="add-cart-button buy-now-button" (click)="buyNow()">Buy now!</button>
+            <!-- <div #paymentRef class="paypal-btn"></div> -->
         </div>
     </div>
 </div>
+<app-modal *ngIf="isModalOpen" [title]="'Great!'" [message]="'You have successfully added the product to your cart!'" [button]="true" (closeModal)="handleCloseModal()"></app-modal>
