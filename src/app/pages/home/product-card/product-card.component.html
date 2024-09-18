@@ -13,4 +13,5 @@
         <button class="add-cart-button" (click)="addToCart()">Add to Cart</button>
     </div>
 </div>
-<app-modal *ngIf="isModalOpen" [title]="'Great!'" [message]="'You have successfully added the product to your cart!'" [button]="true" (closeModal)="handleCloseModal()"></app-modal>
+<ng-container #toastContainer></ng-container>
+<!-- <app-modal *ngIf="isModalOpen" [title]="'Great!'" [message]="'You have successfully added the product to your cart!'" [button]="true" (closeModal)="handleCloseModal()"></app-modal> -->
