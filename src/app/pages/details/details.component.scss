@@ -88,6 +88,16 @@
                     background-color: #000;
                     color: #fff;
                 }
+                &:disabled {
+                    background-color: #e0e0e0;
+                    color: #a0a0a0;
+                    border-color: #c0c0c0;
+                    cursor: not-allowed;
+                    &:hover {
+                        background-color: #e0e0e0;
+                        color: #a0a0a0;
+                    }
+                }
             }
             .buy-now-button {
                 background-color: #000;
@@ -99,6 +109,27 @@
             }
             .paypal-btn {
                 width: 100%;
+            }
+            .disabled-button-wrapper {
+                position: relative;
+                width: 100%;
+                .popup-message {
+                    display: none;
+                    position: absolute;
+                    bottom: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: #333;
+                    color: #fff;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    margin-bottom: 5px;
+                }
+                &:hover .popup-message {
+                    display: block;
+                }
             }
         }
     }

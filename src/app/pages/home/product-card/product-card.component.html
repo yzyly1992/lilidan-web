@@ -10,7 +10,10 @@
             <span class="price">${{product.price==product.discount?(product.price|number:'1.2-2'):(product.discount|number:'1.2-2')}}</span>
             <span class="price"> CAD</span>
         </div>
-        <button class="add-cart-button" (click)="addToCart()">Add to Cart</button>
+        <div class="disabled-button-wrapper">
+            <button class="add-cart-button" (click)="addToCart()" disabled>Add to Cart</button>
+            <span class="popup-message">Out of stock</span>
+        </div>
     </div>
 </div>
 <ng-container #toastContainer></ng-container>

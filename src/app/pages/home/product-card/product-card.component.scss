@@ -64,7 +64,36 @@
             &:hover{
                 transform: translateY(-2px);
             }
-            
+            &:disabled {
+                background-color: #e0e0e0;
+                color: #a0a0a0;
+                border-color: #c0c0c0;
+                cursor: not-allowed;
+                &:hover {
+                    transform: none;
+                }
+            }
+        }
+        .disabled-button-wrapper {
+            position: relative;
+            align-self: flex-end;
+            .popup-message {
+                display: none;
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #333;
+                color: #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                margin-bottom: 5px;
+            }
+            &:hover .popup-message {
+                display: block;
+            }
         }
     }
 }
